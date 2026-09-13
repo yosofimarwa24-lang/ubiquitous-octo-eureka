@@ -1,0 +1,187 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'B Nazanin', Tahoma, Geneva, Verdana, sans-serif;
+}
+body {
+    background-color: #183630;
+    color: #E3DAC9;
+    overflow-x: hidden;
+}
+.site-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 8%;
+    background-color: rgba(24, 54, 48, 0.95);
+    border-bottom: 1px solid #E5C690;
+}
+.logo {
+          width: 150px;
+          height: 150px;
+          font-size: 150px;
+        }
+.nav-menu ul {
+    display: flex;
+    list-style: none;
+}
+.nav-menu ul li {
+    margin-right: 25px;
+}
+.nav-menu ul li a {
+    color: #E3DAC9;
+    text-decoration: none;
+    font-size: 16px;
+    transition: color 0.3s ease;
+}
+.nav-menu ul li a:hover, .nav-menu ul li a.active {
+    color: #E5C690;
+}
+.gallery-container {
+    padding: 60px 8%;
+    max-width: 1400px;
+    margin: 0 auto;
+}
+.gallery-title {
+    text-align: center;
+    margin-bottom: 50px;
+}
+.gallery-title h2 {
+    color: #E5C690;
+    font-size: 32px;
+    margin-bottom: 10px;
+}
+.gallery-title p {
+    color: #E3DAC9;
+    opacity: 0.7;
+    font-size: 14px;
+}
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 35px;
+}
+.flip-card {
+    background-color: transparent;
+    height: 420px;
+    perspective: 1000px;
+}
+.flip-card-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    transition: transform 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+    transform-style: preserve-3d;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.4);
+    border-radius: 12px;
+}
+.flip-card:hover .flip-card-inner {
+    transform: rotateY(180deg);
+}
+.flip-card-front, .flip-card-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+    border-radius: 12px;
+    overflow: hidden;
+}
+.flip-card-front {
+    background-color: #E3DAC9;
+    color: #183630;
+    display: flex;
+    flex-direction: column;
+}
+.image-placeholder {
+    width: 100%;
+    height: 350px;
+    background-color: #d1c5b0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #183630;
+    font-size: 16px;
+    font-weight: bold;
+    position: relative;
+}
+.image-placeholder img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+.item-title-front {
+    padding: 20px;
+    font-size: 18px;
+    font-weight: bold;
+    background-color: #E3DAC9;
+    border-top: 2px solid #E5C690;
+}
+.flip-card-back {
+    background-color: #1c423b;
+    color: #E3DAC9;
+    transform: rotateY(180deg);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 30px;
+    border: 2px solid #E5C690;
+}
+.flip-card-back h3 {
+    color: #E5C690;
+    font-size: 22px;
+    margin-bottom: 15px;
+}
+.flip-card-back p {
+    font-size: 15px;
+    line-height: 1.6;
+    margin-bottom: 25px;
+    opacity: 0.9;
+}
+.price-tag {
+    background-color: #E5C690;
+    color: #183630;
+    padding: 10px 25px;
+    border-radius: 25px;
+    font-weight: bold;
+    font-size: 14px;
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+.price-tag:hover {
+    background-color: #E3DAC9;
+    box-shadow: 0 0 15px rgba(229, 198, 144, 0.5);
+}
+.site-footer {
+    text-align: center;
+    padding: 30px;
+    border-top: 1px solid rgba(229, 198, 144, 0.2);
+    margin-top: 50px;
+}
+.site-footer p {
+    color: #E3DAC9;
+    font-size: 14px;
+    opacity: 0.6;
+}
+@keyframes slideDownIn {
+    0% {
+        transform: translateY(-50px); 
+        opacity: 0;               
+    }
+    100% {
+        transform: translateY(0);   
+        opacity: 1;              
+    }
+}
+.site-header, header {
+    animation: slideDownIn 0.8s cubic-bezier(0.25, 1, 0.5, 1) forwards;
+}
+.main-container, main, .gallery-container, .contact-container {
+    animation: slideDownIn 1.2s cubic-bezier(0.25, 1, 0.5, 1) forwards;
+}
